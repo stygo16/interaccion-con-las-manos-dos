@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #0a0a14;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+canvas {
+  display: block;
+}
+
+/* Start / status overlay */
+#overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(6, 6, 14, 0.85);
+  transition: opacity 0.4s ease;
+}
+
+#overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.card {
+  max-width: 560px;
+  padding: 34px 38px;
+  border-radius: 16px;
+  background: rgba(14, 16, 32, 0.94);
+  color: #e8e8f0;
+  text-align: center;
+  border: 1px solid rgba(0, 229, 255, 0.45);
+  box-shadow:
+    0 0 24px rgba(0, 229, 255, 0.28),
+    0 0 60px rgba(255, 47, 214, 0.14),
+    0 18px 50px rgba(0, 0, 0, 0.5);
+}
+
+.card h1 {
+  font-size: 26px;
+  margin-bottom: 12px;
+  color: #7df5ff;
+  text-shadow: 0 0 14px rgba(0, 229, 255, 0.75);
+}
+
+.card p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #b9b9c6;
+  margin-bottom: 20px;
+}
+
+.card button {
+  font-size: 17px;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #00e5ff, #39c0ff);
+  color: #03222e;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 0 18px rgba(0, 229, 255, 0.5);
+}
+
+.card button:hover {
+  box-shadow: 0 0 28px rgba(0, 229, 255, 0.85);
+}
+
+.card button:disabled {
+  opacity: 0.6;
+  cursor: default;
+  box-shadow: none;
+}
+
+.status {
+  min-height: 22px;
+  margin: 18px 0 0 !important;
+  font-size: 14px;
+  color: #ffb4a2;
+}
+
+/* Floating control panel */
+#controls {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: rgba(10, 12, 26, 0.74);
+  border: 1px solid rgba(0, 229, 255, 0.35);
+  box-shadow: 0 0 18px rgba(0, 229, 255, 0.22);
+  backdrop-filter: blur(6px);
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.control-group label {
+  font-size: 13px;
+  color: #9fdfff;
+  text-shadow: 0 0 8px rgba(0, 229, 255, 0.6);
+}
+
+#volume {
+  width: 130px;
+  accent-color: #00e5ff;
+  cursor: pointer;
+}
+
+#micBtn {
+  font-size: 13px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid rgba(255, 47, 214, 0.7);
+  color: #ffb3f0;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, background 0.2s ease;
+}
+
+#micBtn:hover {
+  box-shadow: 0 0 12px rgba(255, 47, 214, 0.5);
+}
+
+#micBtn.active {
+  background: rgba(255, 47, 214, 0.16);
+  box-shadow: 0 0 16px rgba(255, 47, 214, 0.6);
+}
+
+#micStatus {
+  font-size: 12px;
+  color: #b9e9ff;
+  max-width: 220px;
+  text-align: right;
+}

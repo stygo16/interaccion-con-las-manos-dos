@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piano Virtual — Control con las Manos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="overlay">
+    <div class="card">
+      <h1>🎹 Piano Virtual</h1>
+      <p>
+        La cámara detecta tus manos en tiempo real.<br>
+        Baja las puntas de los dedos hasta cruzar la línea celeste
+        para tocar las teclas de 3 octavas. También puedes hacer clic
+        en las teclas o decir una nota («g4») con el micrófono.
+      </p>
+      <button id="startBtn" type="button">Empezar</button>
+      <p id="status" class="status"></p>
+    </div>
+  </div>
+
+  <div id="controls">
+    <div class="control-group">
+      <label for="volume">🔊 Volumen</label>
+      <input type="range" id="volume" min="0" max="100" value="75">
+    </div>
+    <button id="micBtn" type="button">🎤 Mic: apagado</button>
+    <span id="micStatus"></span>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.13/lib/p5.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ml5@1.4.0/dist/ml5.min.js"></script>
+  <script src="audio.js"></script>
+  <script src="piano.js"></script>
+  <script src="voice.js"></script>
+  <script src="sketch.js"></script>
+</body>
+</html>

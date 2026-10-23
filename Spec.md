@@ -1,0 +1,1 @@
+Construir una aplicación de piano virtual que se controle mediante la cámara del dispositivo. El sistema detecta las manos del usuario en tiempo real, traduce la posición de los dedos en pulsaciones de teclas sobre un teclado virtual de 2 octavas y genera sonido agradable con baja latencia.
